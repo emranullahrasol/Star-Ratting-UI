@@ -32,10 +32,9 @@ const App = () => {
   // HandelSubmit:-
   const HandelSubmit = (e) => {
     e.preventDefault();
-    if (!description.trim()) return;
-    if (rating === 0) return;
-
-    console.log(rating);
+    if (!description.trim() || rating === 0) {
+      return;
+    }
 
     const newRating = {
       id: Date.now(),
