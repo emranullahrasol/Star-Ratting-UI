@@ -33,6 +33,9 @@ const App = () => {
   const HandelSubmit = (e) => {
     e.preventDefault();
     if (!description.trim()) return;
+    if (rating === 0) return;
+
+    console.log(rating);
 
     const newRating = {
       id: Date.now(),
@@ -44,6 +47,7 @@ const App = () => {
     setNewRatingData(newRatings);
     localStorage.setItem("newRating", JSON.stringify(newRatings));
     setDescription("");
+    setRating(0);
   };
 
   const handleDelete = (id) => {
